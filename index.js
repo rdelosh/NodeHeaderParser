@@ -15,7 +15,7 @@ app.get('/api/whoami',function(req,res){
 
 	res.setHeader('Content-Type', 'application/json');
 	res.send(JSON.stringify(
-						{hello:req.headers, ipaddress:req.ip
+						{ipaddress:req.headers["x-forwarded-for"]
 							,language:req.headers["accept-language"]
 							,OS: req.headers["user-agent"]
 
